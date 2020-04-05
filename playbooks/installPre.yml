@@ -1,0 +1,8 @@
+- name: Instalando Pré-Requisitos
+  hosts: local
+  become: yes
+  tasks:
+  - name: Instalar o Git
+    apt:
+      name: git-core git-gui git-doc
+    
