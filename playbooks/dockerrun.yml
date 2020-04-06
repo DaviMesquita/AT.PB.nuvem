@@ -1,0 +1,18 @@
+- name: Criar e roda container
+  hosts: instancia_ec2
+  become: true
+  vars_files:
+    - vars/variables.yml
+
+  tasks:
+  - name: Cria e inicia o servidor 
+    docker_container:  
+      name: "{{ server_name}}"
+      image: itzg/minecraft-server
+      volumes: 
+        - "{{sv_data}}:/data" 
+      ports:
+        - "{{ports}}:25565"
+      env:
+        EULA: "true" 
+      command: docker logs -f {{ server_name }}

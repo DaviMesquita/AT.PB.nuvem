@@ -1,0 +1,3 @@
+server_name: mc1
+sv_data: /MC1data
+ports: 25565

@@ -1,0 +1,11 @@
+- name: Instalando Pré-Requisitos
+  hosts: local
+  become: yes
+  tasks:
+  - name: Instalar o Git
+    apt:
+      name: git-core, git-gui, git-doc
+  - name: Instalar o docker
+    update_cache: yes
+    apt:
+        
